@@ -1,4 +1,4 @@
-package com.kxy.demo1.soundSystem;
+package com.kxy.demo1.soundsystem;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -9,24 +9,31 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-@RunWith(SpringJUnit4ClassRunner.class)  //使用SpringJunit4ClassRunner创建spring的上下文
-//@ContextConfiguration(classes=CDPlayerConfig.class)		//告诉在CDPlayerConfig中加载配置
-@ContextConfiguration(classes=CDPlayerConfig2.class)		//告诉在CDPlayerConfig中加载配置
+/**
+ * 使用SpringJunit4ClassRunner创建spring的上下文
+ * @ContextConfiguration(classes=CDPlayerConfig.class) 告诉在CDPlayerConfig中加载配置
+ * 或者加载多个@ContextConfiguration(classes={CDPlayerConfig.class, CDPlayerConfig2.class}) 告诉在CDPlayerConfig中加载配置
+ * @author Administrator
+ *
+ */
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes=CdPlayerConfig2.class)
 public class JunitTest {
 
-	@Autowired 		//装配注入bean
-	private CD cd;
+	//装配bean
+	@Autowired
+	private Cd cd;
 	
 	@Autowired
 	private InstantiationTracingBeanPostProcessor ins;
 	
 	@Autowired
 	@Qualifier("cdPlayer1")
-	private CDPlayer cdPlayer1;
+	private CdPlayer cdPlayer1;
 	
 	@Autowired
 	@Qualifier("cdPlayer2")
-	private CDPlayer cdPlayer2;
+	private CdPlayer cdPlayer2;
 	
 	@Test
 	public void playCd(){
@@ -41,7 +48,7 @@ public class JunitTest {
 	//结果：在cdPlayer1中修改的MusicCd的name属性值，影响到了cdPlayer2.
 	//结论: spring中的bean是单例的
 	@Test
-	public void TestSameSampleOfBean(){
+	public void testSameSampleOfBean(){
 		cdPlayer1.playNewCd();
 		System.out.println("============================分割线=================================");
 		cdPlayer2.playCD();

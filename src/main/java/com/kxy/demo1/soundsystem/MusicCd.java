@@ -1,9 +1,14 @@
-package com.kxy.demo1.soundSystem;
+package com.kxy.demo1.soundsystem;
 
 import org.springframework.stereotype.Component;
 
-@Component	//定义为组件类，spring扫描时，可以扫描到，会为这个类创建一个bean
-public class MusicCD implements CD{
+/**
+ * @Component定义为组件类，spring扫描时，可以扫描到，会为这个类创建一个bean
+ * @author Administrator
+ *
+ */
+@Component
+public class MusicCd implements Cd{
 
 	private String name = "中国民谣";
 	
@@ -20,12 +25,12 @@ public class MusicCD implements CD{
 		this.name = name;
 	}
 
-	public MusicCD(String name) {
+	public MusicCd(String name) {
 		super();
 		this.name = name;
 	}
 
-	public MusicCD() {
+	public MusicCd() {
 		super();
 	}
 	
