@@ -55,7 +55,7 @@ public class ProfileConfig {
 	}
 	
 	@Bean
-	@Profile("pro")
+	@Profile("prod")
 	public DataSource jndiDataSource(){
 		JndiObjectFactoryBean factory = new JndiObjectFactoryBean();
 		factory.setJndiName("jdbc/MyDs");
