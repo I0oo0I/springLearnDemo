@@ -14,6 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(classes=MagicConfig.class)
 public class ConditionlTest {
 
+	@SuppressWarnings("unused")
 	@Autowired
 	private MagicBean magiceBean;
 	
