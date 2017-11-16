@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 
-import com.kxy.demo1.soundsystem.InstantiationTracingBeanPostProcessor;
+import com.kxy.PrintBean;
 
 /**
  * 目的：一个或多个bean在包含某库（jar包）时才创建，某bean在另一bean申明后才创建，或一beab在某特定环境下才创建，spring4.0的@conditionl解决这个问题
@@ -23,7 +23,7 @@ public class MagicConfig {
 	
 	//打印创建的bean的名字
 	@Bean
-	public InstantiationTracingBeanPostProcessor beanPrint(){
-		return new InstantiationTracingBeanPostProcessor();
+	public PrintBean beanPrint(){
+		return new PrintBean();
 	}
 }

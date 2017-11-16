@@ -26,8 +26,8 @@ public class CdPlayerConfig2 {
 	 * @return
 	 */
 	@Bean
-	public InstantiationTracingBeanPostProcessor ins(){
-		return new InstantiationTracingBeanPostProcessor();
+	public PrintBean printBeanName(){
+		return new PrintBean();
 	}
 	
 	/**

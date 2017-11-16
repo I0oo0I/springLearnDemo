@@ -14,7 +14,7 @@ public class MusicCd implements Cd{
 	
 	@Override
 	public void play() {
-		System.out.println("start play the " + name);
+		System.out.println("开始演奏 " + name + " 音乐");
 	}
 
 	public String getName() {
