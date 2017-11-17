@@ -1,4 +1,4 @@
-package com.kxy.demo2.autowire;
+package com.kxy.demo2.autowire.test2;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

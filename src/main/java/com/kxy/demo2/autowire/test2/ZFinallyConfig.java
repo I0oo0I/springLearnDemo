@@ -1,4 +1,4 @@
-package com.kxy.demo2.autowire;
+package com.kxy.demo2.autowire.test2;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

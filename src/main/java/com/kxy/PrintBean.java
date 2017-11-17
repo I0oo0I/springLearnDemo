@@ -12,7 +12,7 @@ public class PrintBean implements BeanPostProcessor{
 
 	@Override
 	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-		 System.out.println("Bean '" + beanName + "' created : " + bean.toString());  
+		 System.out.println("Bean '" + beanName + "' 已创建 ");  
 	     return bean;  
 	}
 

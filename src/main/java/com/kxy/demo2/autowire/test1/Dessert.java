@@ -1,4 +1,4 @@
-package com.kxy.demo2.autowire;
+package com.kxy.demo2.autowire.test1;
 
 /**
  * 甜点接口
@@ -7,4 +7,5 @@ package com.kxy.demo2.autowire;
  */
 public interface Dessert {
 
+	void whoIsMe();
 }
