@@ -1,13 +1,12 @@
 package com.kxy.demo2.condition;
 
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.type.AnnotatedTypeMetadata;
 
 /**
- * 可以看做是条件，实现condition接口，覆盖matchs方法，mathces方法return false时，运行ConditionlTest测试方法，发现bean创建失败
+ * 该类可以看做是条件，实现condition接口，覆盖matchs方法，mathces方法return false时，运行ConditionlTest测试方法，发现bean创建失败
  * @author Administrator
  *
  */
@@ -22,23 +21,15 @@ public class MagiceExsitsCondition implements Condition{
 	 * 		getClassLoader()返回的ClassLoader加载并检查类是否存在。
 	 * AnnotatedTypeMetadata功能：
 	 * 		isAnnotated()方法，我们能够判断带有@Bean注解的方法是不是还有其他特定的注解，借助其他的那些方法，我们能够检查@Bean注解的方法上其他注解的属性
-	 * 详见 ProfileCondition 的match方法
+	 * 详见  ProfileCondition 的match方法
 	 */
 	@Override
 	public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
-		//判断环境变量中是否有值
-//		Environment e = context.getEnvironment();
-//		String name = "aa";
-//		if(e.containsProperty(name)){
-//			return true;
-//		}
-		System.out.println(Bean.class.getName());
-		System.out.println(metadata.isAnnotated(Bean.class.getName()));
 		ConfigurableListableBeanFactory  factory = context.getBeanFactory();
 		String beanName = "org.springframework.context.event.internalEventListenerProcessor";
 		if(factory.containsBean(beanName)){
 			return true;
-		};
+		}
 		return false;
 	}
 

@@ -22,5 +22,8 @@ public class ZFinallyTest {
 	
 	@Test
 	public void test(){
+		System.out.println("-------------------------------------------------------------------------------------------------");
+		System.out.println("ice :" + ice.toString());
+		System.out.println("ice1:" + ice1.toString());
 	}
 }

@@ -5,8 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.kxy.PrintBean;
-
 /**
  * 
  * @author Administrator
@@ -25,9 +23,6 @@ public class Test {
 	@Autowired
 	//@Qualifier("cool")
 	private Dessert dessert;
-	
-	@Autowired
-	public PrintBean printBean;
 	
 	@org.junit.Test
 	public void test(){
