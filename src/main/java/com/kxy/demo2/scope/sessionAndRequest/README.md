@@ -10,3 +10,9 @@ session和request作用域    回话和请求作用域
 
 session和request作用域的区别 ？
 	具体请看  com.kxy.demo.contoller.TestController 的演示
+	
+
+在xml中配置scope
+<bean id="" class="" scope="session"><aop:scoped-proxy  proxy-target-class="false" /></bean>
+proxy-target-class 默认是true, 是基于类的代理， 等同于 proxyMode=ScopedProxyMode.TARGET_CLASS	（要被代理的对象是实体类）
+proxy-target-class="false", 是基于接口的代理，等同于 proxyMode=ScopedProxyMode.INTERFACE	（要被代理的对象是接口）
