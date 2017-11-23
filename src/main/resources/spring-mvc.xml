@@ -65,15 +65,15 @@
     <mvc:resources mapping="/imgdata/**" location="/imgdata/" />
     
     <!-- API 接口跨域配置 --> 
-    <mvc:cors>
+    <!-- <mvc:cors>
     	<mvc:mapping path="/api/**" 
     			allowed-origins="*"  
                 allowed-methods="POST, GET, OPTIONS, DELETE, PUT"  
                 allowed-headers="Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"  
                 allow-credentials="true"/> 
-                 <!-- max-age="1"  -->
-                 <!-- exposed-headers=""-->
-    </mvc:cors>
+                 max-age="1" 
+                 exposed-headers=""
+    </mvc:cors> -->
     <!--  
     Access-Control-Expose-Headers该字段可选。
     CORS请求时，XMLHttpRequest对象的getResponseHeader()方法只能拿到6个基本字段：

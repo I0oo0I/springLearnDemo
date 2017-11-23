@@ -8,14 +8,14 @@ import org.springframework.web.context.WebApplicationContext;
 import com.kxy.demo.model.ShoppingCart;
 
 @Service
-@Scope(value=WebApplicationContext.SCOPE_SESSION, proxyMode=ScopedProxyMode.TARGET_CLASS)
-public class StoreService {
+@Scope(value=WebApplicationContext.SCOPE_REQUEST, proxyMode=ScopedProxyMode.TARGET_CLASS)
+public class StoreRequestScopeService {
 
 	private int a = 1;
 	
-	public String printResult(ShoppingCart cart) {
+	public void printResult() {
+		System.out.println("--------------------------请求作用域，使用代理-------------------------------");
 		System.out.println(a);
 		a++;
-		return cart.toString();
 	}
 }

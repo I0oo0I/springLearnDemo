@@ -9,4 +9,4 @@ session和request作用域    回话和请求作用域
 就购物车而言，回话作用域是最实用的
 
 session和request作用域的区别 ？
-	...
+	具体请看  com.kxy.demo.contoller.TestController 的演示
