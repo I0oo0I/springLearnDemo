@@ -1,0 +1,1 @@
+和 propertyByFile中通过Environment获取属性值不同，这里使用的是${}, 占位符的形式

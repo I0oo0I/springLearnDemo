@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean id="spel" class="com.kxy.demo2.spel.spel.SpELlTest">
+		<property name="i" value="#{100}"></property>
+		<property name="name" value="#{'小红'}"></property>
+		<property name="布尔值判断" value="true"></property>
+		<property name="otherBeanTitle" value="#{spelModel.title}"></property>
+		<property name="otherBeanMethod" value="#{spelModel.toString()}"></property>
+		<property name="otherBeanMethodNullResult" value="#{spelModel.nullMethod()?.toUpperCase()}"></property>
+		<property name="I_am_π" value="#{T(java.lang.Math).PI}"></property>
+		<property name="I_am_面积" value="#{T(java.lang.Math).PI*(2^2)}"></property>
+		<property name="compare_A_相等_B" value="#{spel.i == 100}"></property>
+		<property name="compare_A_eq_B" value="#{spel.i eq 100}"></property>
+		<property name="三目运算符" value="#{spel.i > 1000 ? 'i大于1000': 'i小于1000'}"></property>
+		<property name="三目运算符判断null" value="#{spel.i?: 'i不是null'}"></property>
+	</bean>
+
+	<bean id="spelModel" class="com.kxy.demo2.spel.spel.SpELModel">
+		<property name="title" value="#{'我是SeELModel'}"></property>
+	</bean>
+</beans>

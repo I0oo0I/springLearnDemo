@@ -5,6 +5,8 @@ public class TestModel {
 	private String title;
 	
 	private String content;
+	
+	private Integer age;
 
 	public String getTitle() {
 		return title;
@@ -22,6 +24,15 @@ public class TestModel {
 		this.content = content;
 	}
 
+	
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
 	public TestModel(String title, String content) {
 		super();
 		this.title = title;
@@ -35,6 +46,11 @@ public class TestModel {
 	@Override
 	public String toString() {
 		return "TestModel [title=" + title + ", content=" + content + "]";
+	}
+
+	public TestModel(Integer age) {
+		super();
+		this.age = age;
 	}
 	
 }
