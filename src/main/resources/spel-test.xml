@@ -5,20 +5,25 @@
 
 	<bean id="spel" class="com.kxy.demo2.spel.spel.SpELlTest">
 		<property name="i" value="#{100}"></property>
+		<property name="spel_i" value="#{spel.i}"></property>
 		<property name="name" value="#{'小红'}"></property>
-		<property name="布尔值判断" value="true"></property>
+		<property name="布尔值判断" value="#{true}"></property>
 		<property name="otherBeanTitle" value="#{spelModel.title}"></property>
 		<property name="otherBeanMethod" value="#{spelModel.toString()}"></property>
 		<property name="otherBeanMethodNullResult" value="#{spelModel.nullMethod()?.toUpperCase()}"></property>
 		<property name="I_am_π" value="#{T(java.lang.Math).PI}"></property>
 		<property name="I_am_面积" value="#{T(java.lang.Math).PI*(2^2)}"></property>
-		<property name="compare_A_相等_B" value="#{spel.i == 100}"></property>
-		<property name="compare_A_eq_B" value="#{spel.i eq 100}"></property>
-		<property name="三目运算符" value="#{spel.i > 1000 ? 'i大于1000': 'i小于1000'}"></property>
-		<property name="三目运算符判断null" value="#{spel.i?: 'i不是null'}"></property>
-	</bean>
+		<property name="compare_A_相等_B" value="#{100 == 100}"></property>
+		<property name="compare_A_eq_B" value="#{100 eq 100}"></property>
+		<property name="三目运算符" value="#{100 > 1000 ? 'i大于1000': 'i小于1000'}"></property>
+		<property name="三目运算符判断null" value="#{spel.i?: 'i是null,我是默认值'}"></property>
+		<property name="判断是否是邮件" value="#{'123@qq.com' matches '[a-zA-z0-9._%+-]+@[a-zA-z0-9.-]+\\.com'}"></property>
+		<property name="集合获数组取值" value="#{spelModel.arrays[2]}"></property>
+		<property name="从给定的字符串中取出第3个字符" value="#{'I am String'[2]}"></property>
+<!-- 		<property name="集合或数组过滤" value="#{spelModel.titleArrays.?[title eq 'a']}"></property>
+ -->	</bean>
 
 	<bean id="spelModel" class="com.kxy.demo2.spel.spel.SpELModel">
-		<property name="title" value="#{'我是SeELModel'}"></property>
+		<property name="title" value="#{'我是SpELModel的title'}"></property>
 	</bean>
 </beans>
