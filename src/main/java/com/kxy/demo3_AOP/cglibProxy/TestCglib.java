@@ -4,7 +4,7 @@ public class TestCglib {
 
 	public static void main(String[] args) {
 		CglibProxy cglibProxy = new CglibProxy();
-		DoSomething doSomethingServiceImpl= (DoSomething)cglibProxy.getProxy(DoSomething.class);
+		DoSomething doSomethingServiceImpl= (DoSomething)cglibProxy.getIntance(new DoSomething());
 		doSomethingServiceImpl.eatFood("苹果");
 		doSomethingServiceImpl.doHomework("数学");
 	}

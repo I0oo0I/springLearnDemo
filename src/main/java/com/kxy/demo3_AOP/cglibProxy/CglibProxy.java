@@ -15,9 +15,12 @@ import net.sf.cglib.proxy.MethodProxy;
  */
 public class CglibProxy implements MethodInterceptor{
 
-    public Object getProxy(Class clazz){
+	private Object target;
+	
+    public Object getIntance(Object target){
+    	this.target = target;
     	Enhancer enhancer = new Enhancer();
-        enhancer.setSuperclass(clazz); //设者要创建子类的类
+        enhancer.setSuperclass(target.getClass()); //设者要创建子类的类
         enhancer.setCallback(this); //设置回调的对象
         return enhancer.create(); //通过字节码技术动态创建子类实例
     }
@@ -25,15 +28,16 @@ public class CglibProxy implements MethodInterceptor{
 	@Override
 	public Object intercept(Object obj, Method method, Object[] args, MethodProxy proxy) throws Throwable {
 		System.out.println("-------------------------------我是日志系统，开始记录日志-------------------------------");
-		System.out.println("代理的目标：" + obj);
+		System.out.println("代理的目标：" + obj.getClass().getName());
+		System.out.println("Method的名称：" + method.getName());
+		System.out.println("MethodProxy的名称：" + proxy.getSuperName());
 		String arg = Arrays.deepToString(args);
 		System.out.println("args参数" + arg);
-		System.out.println("开始调用目标类的核心业务代码");
+		System.out.println("开始调用目标类的核心业务代码：");
 		Object result = proxy.invokeSuper(obj, args);
 		System.out.println("目标类的核心业务代码执行完毕");
 		System.out.println("-------------------------------我是日志系统，结束记录日志-------------------------------");
 		return result;
 	}
 
-	
 }
