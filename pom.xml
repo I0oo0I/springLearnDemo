@@ -229,6 +229,7 @@
 	    <version>1.2.4</version>
 	</dependency>
 	
+	<!-- cglib代理 -->
 	<!-- https://mvnrepository.com/artifact/cglib/cglib-nodep -->
 	<dependency>
 	    <groupId>cglib</groupId>
