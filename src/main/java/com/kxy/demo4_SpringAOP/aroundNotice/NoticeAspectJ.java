@@ -7,7 +7,9 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 /**
- * 环绕通知，就是将前置通知，后置通知，和错误通知都放在一个方法中
+ * 环绕通知，就是将前置通知，后置通知，和错误通知都放在一个方法中，好处
+ * 普通的通知中，before方法和after方法是分离的，它们之间共享信息非常的不容易，假如使用成员变量，NoticeAspectJ因为是单例的，
+ * 多线程时会出现安全问题，around的通知的好处是，before和after方法在一起
  * @author Administrator
  *
  */

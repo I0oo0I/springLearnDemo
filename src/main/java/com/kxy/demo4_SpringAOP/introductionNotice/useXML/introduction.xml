@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<bean id="eatFood" class="com.kxy.demo4_SpringAOP.introductionNotice.useXML.EatFoodServiceImpl"></bean>
+	<bean id="addFunction" class="com.kxy.demo4_SpringAOP.introductionNotice.useXML.AddFunctionServiceImpl"></bean>
+	
+	<aop:config>
+		<aop:aspect>
+			<aop:declare-parents types-matching="com.kxy.demo4_SpringAOP.introductionNotice.useXML.EatFoodService+" 
+								 implement-interface="com.kxy.demo4_SpringAOP.introductionNotice.useXML.AddFunctionService"
+								 default-impl="com.kxy.demo4_SpringAOP.introductionNotice.useXML.AddFunctionServiceImpl"/>
+								 <!-- 或者使用  delegate-ref="addFunction" -->
+								 
+		</aop:aspect>
+	</aop:config>
+
+</beans>

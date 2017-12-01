@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<bean id ="eatFood" class="com.kxy.demo4_SpringAOP.noticeWithParam.useXML.EatFoodServiceImpl"></bean>
+	<bean id ="coundFood" class="com.kxy.demo4_SpringAOP.noticeWithParam.useXML.CountFoodAspect"></bean>
+	
+	<!-- args()的参数名字，必须和 CountFoodAspect 中afterEat的参数名字相同 -->
+	<aop:config>
+		<aop:aspect ref="coundFood">
+			<aop:pointcut expression="execution(** com.kxy.demo4_SpringAOP.noticeWithParam.useXML.EatFoodServiceImpl.*(String)) 
+									  and args(eatFood)" 
+				id="pointCut"/>
+			<aop:after method="afterEat" pointcut-ref="pointCut"/>
+		</aop:aspect>
+	</aop:config>
+</beans>
