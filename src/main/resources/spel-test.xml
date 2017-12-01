@@ -3,7 +3,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
-	<bean id="spel" class="com.kxy.demo2.spel.spel.SpELlTest">
+<!-- 	classpath 默认的目录应该是window文件系统下的target/classes 目录-->
+ 		<bean id="spel" class="com.kxy.demo2.spel.spel.SpELlTest">
 		<property name="i" value="#{100}"></property>
 		<property name="spel_i" value="#{spel.i}"></property>
 		<property name="name" value="#{'小红'}"></property>

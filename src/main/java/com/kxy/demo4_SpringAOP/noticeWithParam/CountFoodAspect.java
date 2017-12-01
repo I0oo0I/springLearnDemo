@@ -17,7 +17,9 @@ public class CountFoodAspect {
 	private Map<String, Integer> foodCount = new HashMap<>();
 	
 	/**
-	 * args 的值 fruit 和 @After("countFood(eatFood)") 和  public void eatFood(String food); 名字可以不一样
+	 * args 的值 fruit 和 @After("countFood(eatFood)") 和  public void eatFood(String food); 参数名字可以不一样
+	 * 但是要与各自的方法的参数名称一致
+	 * args表示，下面的 execution 中传递给 EatFoodService 方法的 String 类型的参数也会传递到这个通知，用fruit这个参数接收
 	 * @param fruit
 	 */
 	@Pointcut("execution(** com.kxy.demo4_SpringAOP.noticeWithParam.EatFoodService.*(String)) && args(fruit)")
