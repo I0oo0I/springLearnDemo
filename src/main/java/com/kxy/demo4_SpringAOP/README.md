@@ -22,3 +22,5 @@ Spring的切面和AspectJ比较
 	@annotation	限定匹配带有指定注解的连接点
 除了以上指示器，在Spring中使用其他的AspectJ指示器，会报错
 
+遗留问题，直接使用AspectJ创建切面？？？
+
