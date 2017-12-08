@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.DispatcherServlet;
 
 import com.kxy.demo.model.ShoppingCart;
+import com.kxy.demo.service.AsynService;
 import com.kxy.demo.service.StoreRequestScopeService;
 import com.kxy.demo.service.StoreSessionScopeService;
 import com.kxy.demo.service.StoreSingtonScopeService;
@@ -34,6 +35,9 @@ public class TestController {
 	
 	@Autowired
 	private StoreSingtonScopeService singtonScope;
+	
+	@Autowired
+	private AsynService asynService;
 	
 	/**
 	 * 演示会话作用域，在同一时刻发起访问，StoreSessionScopeService的bean是否是共用同一实例，即判断在会话范围内bean是否是单例的，
@@ -71,4 +75,11 @@ public class TestController {
 	public void testSingtonScope(HttpServletRequest request) {
 		singtonScope.printResult();
 	} 
+	
+	@RequestMapping("testAsyn")
+	public void testAsyn() {
+		System.out.println("开始执行测试方法");
+		asynService.testAysn();
+		System.out.println("结束方法测试");
+	}
 }

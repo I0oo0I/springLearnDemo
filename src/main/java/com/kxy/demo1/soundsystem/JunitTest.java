@@ -25,9 +25,6 @@ public class JunitTest {
 	private Cd cd;
 	
 	@Autowired
-	private PrintBean printBeanName;
-	
-	@Autowired
 	@Qualifier("cdPlayer1")
 	private CdPlayer cdPlayer1;
 	
@@ -38,7 +35,6 @@ public class JunitTest {
 	@Test
 	public void playCd(){
 		cd.play();
-		printBeanName.toString();
 		assertNotNull(cd);
 	}
 	

@@ -3,6 +3,8 @@ package com.kxy.demo1.soundsystem;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.kxy.PrintBean;
+
 
 /**
  * 使用显示的bean配置，不用自动扫描
